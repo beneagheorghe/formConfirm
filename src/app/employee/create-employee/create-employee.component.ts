@@ -45,5 +45,6 @@ export class CreateEmployeeComponent implements OnInit, SaveData {
       ...this.form.getRawValue(),
     });
     this.router.navigate(['/employee']);
+    this.form.reset();
   }
 }
