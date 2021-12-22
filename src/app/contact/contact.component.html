@@ -1,0 +1,29 @@
+<div class="container-form">
+  <h1 class="title-form">Contact Us</h1>
+  <h3 class="subtitle-form">Contact us to start your project!</h3>
+  <form [formGroup]="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input type="name" matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Ex. pat@example.com"
+        formControlName="email"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea
+        matInput
+        placeholder="Ex. It makes me feel..."
+        formControlName="comment"
+      ></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="warn">Send</button>
+  </form>
+</div>

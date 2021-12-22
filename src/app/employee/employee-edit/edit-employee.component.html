@@ -1,0 +1,24 @@
+<div class="container-form">
+  <h1 class="title-form">Edit Employee</h1>
+  <form [formGroup]="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input type="name" matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Weight</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Weight"
+        formControlName="weight"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Position</mat-label>
+      <input matInput placeholder="Ex. Developer" formControlName="position" />
+    </mat-form-field>
+
+    <button mat-raised-button color="warn">Update</button>
+  </form>
+</div>

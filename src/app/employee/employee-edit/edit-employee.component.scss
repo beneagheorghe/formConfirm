@@ -1,0 +1,14 @@
+.container-form {
+  padding: 2rem 0;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  color: #f06027;
+
+  form {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
