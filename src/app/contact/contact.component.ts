@@ -16,8 +16,8 @@ export class ContactComponent implements OnInit, SaveData {
     this.initForm();
   }
 
-  isDataSaved(): boolean {
-    return !this.form.dirty;
+  hasUnsavedData(): boolean {
+    return this.form.dirty;
   }
 
   private initForm(): void {

@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SaveData } from 'src/app/_interfaces/save-data.interface';
-import { Employee } from 'src/app/_models/employee.model';
+import { Employee } from 'src/app/_interfaces/employee.interface';
 import { EmployeeListService } from 'src/app/_services/employee-list.service';
 
 @Component({
@@ -17,7 +17,7 @@ import { EmployeeListService } from 'src/app/_services/employee-list.service';
 })
 export class EditEmployeeComponent implements OnInit, SaveData {
   form: FormGroup;
-  private indexEmployee: number;
+
   constructor(
     private fb: FormBuilder,
     private employeeListService: EmployeeListService,
@@ -29,8 +29,8 @@ export class EditEmployeeComponent implements OnInit, SaveData {
     this.setFormEmployee();
   }
 
-  isDataSaved(): boolean {
-    return !this.form.dirty;
+  hasUnsavedData(): boolean {
+    return this.form.dirty;
   }
 
   private initForm(): void {

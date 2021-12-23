@@ -15,16 +15,13 @@ import { SaveData } from '../_interfaces/save-data.interface';
 })
 export class FormGuardGuard implements CanDeactivate<SaveData> {
   canDeactivate(
-    component: SaveData,
-    currentRoute: ActivatedRouteSnapshot,
-    currentState: RouterStateSnapshot,
-    nextState?: RouterStateSnapshot
+    component: SaveData
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (!component.isDataSaved()) {
+    if (component.hasUnsavedData()) {
       return new Promise((resolve) => {
         Confirm.show(
           'You leave now',

@@ -27,8 +27,8 @@ export class CreateEmployeeComponent implements OnInit, SaveData {
     this.initForm();
   }
 
-  isDataSaved(): boolean {
-    return !this.form.dirty;
+  hasUnsavedData(): boolean {
+    return this.form.dirty;
   }
 
   private initForm(): void {
@@ -44,7 +44,7 @@ export class CreateEmployeeComponent implements OnInit, SaveData {
       index: this.employeeListService.EMPLOYEE_DATA.length + 1,
       ...this.form.getRawValue(),
     });
-    this.router.navigate(['/employee']);
     this.form.reset();
+    this.router.navigate(['/employee']);
   }
 }
